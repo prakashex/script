@@ -2,7 +2,14 @@
 
 *To get started* 
 - **mac and linux users**
- RUN `bash <(wget -qO- https://raw.githubusercontent.com/Prakashh21/script/master/script.sh) project-name` in your terminal
-- **windows users** 
-  open git bash and run `curl -s https://raw.githubusercontent.com/Prakashh21/script/master/script.sh | bash -s project-name`
+ RUN the below command in your terminal
+ ```
+ bash <(wget -qO- https://raw.githubusercontent.com/Prakashh21/script/master/script.sh) project-name
+ ``` 
+  
 
+- **windows users** open git bash and run the below command
+
+```
+curl -s https://raw.githubusercontent.com/Prakashh21/script/master/script.sh | bash -s project-name
+````
