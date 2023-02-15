@@ -1,11 +1,11 @@
 #! /bin/bash
 
-cd ~
+dir=$(pwd)
 
 npm create vite@latest ${1} -- --template react
 
 
-cd ~/${1}
+cd ${dir}/${1}
 
 
 npm install
@@ -16,7 +16,7 @@ npm install -D tailwindcss postcss autoprefixer
 npm install react-router-dom
 npx tailwindcss init -p
 
-cd ~/${1}/src/assets/
+cd ${dir}/${1}/src/assets/
 rm react.svg
 cd ..
 rm App.css
