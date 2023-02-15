@@ -61,12 +61,20 @@ sed -i '3i content: [ "./index.html",  "./src/**/*.{js,ts,jsx,tsx}",],' tctemp
 mv tctemp tailwind.config.cjs
 
 
+tempDir=$(pwd)
+
 #initializing git repo
 
-git init
+if [ "$tempDir" == "${dir}/${1}" ]; then
+	git init
+	code .
+else
+	echo "something went wrong"
+fi
 
 
-code .
+
+
 
 
 
