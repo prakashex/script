@@ -13,7 +13,7 @@ npm install
 # tailwind
 
 npm install -D tailwindcss postcss autoprefixer
-npm install react-router-dom
+npm install react-router-dom axios
 npx tailwindcss init -p
 
 cd ${dir}/${1}/src/assets/
@@ -39,7 +39,7 @@ sed '10,29d' App.jsx | tee > temp
 sed '2d;6d;9d' temp | tee > temptwo
 
 sed -i '7i <div className="border-2 border-black text-center px-8 text-2xl">' temptwo
-sed -i '8i  Hi , there <br /> This React boiler plate code , with tailwind has been generated using a script  <br /> to change the contents of this file go to App.jsx inside src folder <br /> <br /> -- Prakash' temptwo
+sed -i '8i  Hi , there <br /> This React boiler plate code , with browser router and Context preconfigured along with tailwind , this has been generated using a script  <br /> to change the contents of this page go to App.jsx inside src folder <br /> <br /> ' temptwo
 
 rm temp App.jsx
 
