@@ -160,7 +160,7 @@ useEffect( () => {
 
 return {responseData , loading , error}
 
-}"> useConf.jsx
+}" >>  useConfig.jsx
 
 
 cd ..
