@@ -132,18 +132,17 @@ cd ..
 
 mkdir hooks
 cd hooks 
-touch useConfig.jsx
 
-echo "import axios from "axios";
-import { useEffect, useState } from "react";
+echo "import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 export function useConfig(url , apiData ={} , headers={}){
     const [responseData , setResponseData] = useState();
     const [error , setError] = useState();
     const [loading , setLoading] = useState(false);
-console.log("url --> ", url)
-console.log("data --> ", apiData)
-console.log("headers --> ", headers)
+console.log('url --> ', url)
+console.log('data --> ', apiData)
+console.log('headers --> ', headers)
 
 useEffect( () => {
     setLoading(true)
@@ -161,7 +160,7 @@ useEffect( () => {
 
 return {responseData , loading , error}
 
-}" >  useConfig.jsx
+}" >>  useConfig.jsx
 
 
 cd ..
