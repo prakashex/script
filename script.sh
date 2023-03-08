@@ -134,14 +134,15 @@ mkdir config
 cd Config
 echo "export const API_BASE_URL='http://www.ticket2umrah.com/api/'
 export const API_END_POINTS={
-    Config:API_BASE_URL+"appConfig",
+    config:API_BASE_URL+'appConfig',
+    checkSub:API_BASE_URL+'checkSubscription'
 }
 
 
 export const data = {
-    "calling_code" :  "93",
-    "mcc": "web",
-    "mnc": "web",
+    calling_code :  93,
+    mcc: 'web',
+    mnc: 'web',
   };
 
 export const headers =  {
@@ -152,7 +153,8 @@ export const headers =  {
     'Cache-Control': 'no-cache',
     'Language': 'en',
     'Servicefor': 'awccAFG'
-  }"> Config.jsx
+  }
+"> Config.jsx
 
 cd ..
 
