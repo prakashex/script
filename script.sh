@@ -105,7 +105,7 @@ cd ..
 
 mkdir config
 cd Config
-echo "export const API_BASE_URL="http://www.ticket2umrah.com/api/"
+echo "export const API_BASE_URL='http://www.ticket2umrah.com/api/'
 export const API_END_POINTS={
     Config:API_BASE_URL+"appConfig",
 }
