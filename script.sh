@@ -71,7 +71,7 @@ function Protected() {
 
 export default Protected" >> Protected.jsx
 
-
+cd ..
 
 mkdir Pages
 cd Pages
