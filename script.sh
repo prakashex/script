@@ -46,6 +46,33 @@ rm temp App.jsx
 mv temptwo App.jsx
 
 mkdir components
+cd components 
+
+echo "import React from 'react'
+import { API_END_POINTS, data, headers } from '../config/Config'
+import { useCheckSub } from '../hooks/useCheckSub';
+import {useConfig } from '../hooks/useConfig'
+
+
+
+function Protected() {
+
+
+   const {responseData, loading , error} = useConfig(API_END_POINTS.config , data , headers);
+   const {subData } = useCheckSub(API_END_POINTS.checkSub, {'msisdn': '701701701' }, headers)
+
+
+
+
+  return (
+    <div>Protected</div>
+  )
+}
+
+export default Protected" >> Protected.jsx
+
+
+
 mkdir Pages
 cd Pages
 
