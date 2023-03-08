@@ -45,7 +45,7 @@ rm temp App.jsx
 
 mv temptwo App.jsx
 
-mkdir Common\ Components
+mkdir components
 mkdir Pages
 cd Pages
 
@@ -101,12 +101,70 @@ export {Context , ContextProvider}" > Context.jsx
 
 cd ..
 
-mkdir Config
 
+
+mkdir config
 cd Config
-touch Config.jsx
+echo "export const API_BASE_URL="http://www.ticket2umrah.com/api/"
+export const API_END_POINTS={
+    Config:API_BASE_URL+"appConfig",
+}
+
+
+export const data = {
+    "calling_code" :  "93",
+    "mcc": "web",
+    "mnc": "web",
+  };
+
+export const headers =  {
+    'Username': 'web',
+    'Accept': 'application/json, */*',
+    'Reqfrom': 'web',
+    'Buildtype': '',
+    'Cache-Control': 'no-cache',
+    'Language': 'en',
+    'Servicefor': 'awccAFG'
+  }"> Config.jsx
 
 cd ..
+
+
+mkdir hooks
+cd hooks 
+
+echo "import axios from "axios";
+import { useEffect, useState } from "react";
+
+export function useConfig(url , apiData ={} , headers={}){
+    const [responseData , setResponseData] = useState();
+    const [error , setError] = useState();
+    const [loading , setLoading] = useState(false);
+console.log("url --> ", url)
+console.log("data --> ", apiData)
+console.log("headers --> ", headers)
+
+useEffect( () => {
+    setLoading(true)
+    axios({
+        method: 'post',
+        url: url,
+        data: apiData,
+        headers: headers
+    }).then(resp => setData(resp.data))
+      .catch(error => setError(error))
+      .finally(() => setLoading())
+},[url])
+
+
+
+return {responseData , loading , error}
+
+}"> useConfig.jsx
+
+
+cd ..
+
 
 echo "import React from 'react'
 import ReactDOM from 'react-dom/client'
