@@ -228,6 +228,7 @@ echo "import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App'
+import Protected from './components/Protected'
 import { ContextProvider } from './Context/Context'
 import './index.css'
 import Home from './Pages/Home'
@@ -241,7 +242,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/home',
-    element: <Home />
+    element: <Protected Component={Home} />
   }
 ])
 
