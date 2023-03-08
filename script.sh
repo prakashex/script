@@ -132,6 +132,7 @@ cd ..
 
 mkdir hooks
 cd hooks 
+touch useConfig.jsx
 
 echo "import axios from "axios";
 import { useEffect, useState } from "react";
