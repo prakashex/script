@@ -137,7 +137,7 @@ echo "import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 export function useConfig(url , apiData ={} , headers={}){
-    const [responseData , setResponseData] = useState();
+    const [configData , setConfigData] = useState();
     const [error , setError] = useState();
     const [loading , setLoading] = useState(false);
 console.log('url --> ', url)
@@ -151,17 +151,48 @@ useEffect( () => {
         url: url,
         data: apiData,
         headers: headers
-    }).then(resp => setData(resp.data))
+    }).then(resp => setConfigData(resp.data))
       .catch(error => setError(error))
-      .finally(() => setLoading())
+      .finally(() => setLoading(false))
 },[url])
 
 
 
-return {responseData , loading , error}
+return {configData , loading , error}
 
-}" >>  useConfig.jsx
+}
+" >>  useConfig.jsx
 
+
+echo "import axios from 'axios';
+import { useEffect, useState } from 'react';
+
+export function useCheckSub(url , apiData ={} , headers={}){
+    const [subData , setSubData] = useState();
+    const [subError , setSubError] = useState();
+    const [subLoading , setSubLoading] = useState(false);
+console.log('url --> ', url)
+console.log('data --> ', apiData)
+console.log('headers --> ', headers)
+
+useEffect( () => {
+    setSubLoading(true)
+    axios({
+        method: 'post',
+        url: url,
+        data: apiData,
+        headers: headers
+    }).then(resp => setSubData(resp.data))
+      .catch(error => setSubError(error))
+      .finally(() => setSubLoading(false))
+},[url])
+
+
+
+return {subData  , subLoading , subError}
+
+}
+" >> useCheckSub.jsx
 
 cd ..
 
