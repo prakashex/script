@@ -43,15 +43,56 @@ echo -e $TAILWIND | cat - index.css > tailwindtemp && mv tailwindtemp index.css
 echo -e $STR > App.css
 
 
-sed '10,29d' App.jsx | tee > temp
-sed '2d;6d;9d' temp | tee > temptwo
+# sed '10,29d' App.jsx | tee > temp
+# sed '2d;6d;9d' temp | tee > temptwo
 
-sed -i '7i <div className="border-2 border-black text-center px-8 text-2xl">' temptwo
-sed -i '8i  Hi , there <br /> This React boiler plate code , with browser router and Context preconfigured along with tailwind , this has been generated using a script  <br /> to change the contents of this page go to App.jsx inside src folder <br /> <br /> ' temptwo
+# sed -i '7i <div className="border-2 border-black text-center px-8 text-2xl">' temptwo
+# sed -i '8i  Hi , there <br /> This React boiler plate code , with browser router and Context preconfigured along with tailwind , this has been generated using a script  <br /> to change the contents of this page go to App.jsx inside src folder <br /> <br /> ' temptwo
 
-rm temp App.jsx
+# rm temp App.jsx
 
-mv temptwo App.jsx
+# mv temptwo App.jsx
+
+echo "import { useState } from 'react';
+import './App.css';
+
+function App() {
+  return (
+    <div className='border-2 border-black text-center px-8 text-2xl'>
+      <h1 className='text-4xl'>
+        This script initializes a vite app with React and Javascript and
+        Contains --
+      </h1>
+      <ol className='list-disc text-left'>
+        <li>entire setup of context api</li>
+        <li>
+          libraries such as axios and tailwind and react-router-dom are pre
+          installed and configured
+        </li>
+        <li>
+          entire folder structure relevant to what we currently use in our
+          projects
+        </li>
+        <li>custom hooks , for appConfig and checkSub APIs </li>
+        <li>
+          routes created using createBrowserRouter , with protected routes setup
+        </li>
+      </ol>
+
+      <h2 className='mt-4 font-bold'>
+        You'll find context example in /home route , which renders home component ,
+        and is a protected route
+      </h2>
+
+      <h2></h2>
+    </div>
+  );
+}
+
+export default App;
+" > App.jsx
+
+
 
 mkdir components
 cd components
@@ -63,7 +104,7 @@ import {useConfig } from '../hooks/useConfig'
 
 
 
-function Protected() {
+function Protected({ Component }) {
 
 
    const {responseData, loading , error} = useConfig(API_END_POINTS.config , data , headers);
@@ -81,7 +122,7 @@ function Protected() {
 */
 
   return (
-    <div>Protected</div>
+      <Component />
   )
 }
 
@@ -92,21 +133,21 @@ cd ..
 mkdir Pages
 cd Pages
 
-echo "import React, { useContext } from 'react'
-import { Context } from '../Context/Context'
-
+echo "import React, { useContext } from 'react';
+import { Context } from '../Context/Context';
 
 function Home() {
-    const {testState} = useContext(Context)
+  const { testState } = useContext(Context);
   return (
-    <div>Home
-        This variable is coming from Context -- {testState}
+    <div>
+      Home This variable is coming from Context --{" "}
+      <span className='font-bold'>{testState}</span>
     </div>
-
-  )
+  );
 }
 
-export default Home" > Home.jsx
+export default Home;
+" > Home.jsx
 
 cd ..
 
