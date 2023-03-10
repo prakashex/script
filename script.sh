@@ -1,5 +1,12 @@
 #! /bin/bash
 
+
+
+echo -en '\n'
+echo -en '\n'
+echo  -e "\033[33;5mScript is Running Please wait , Please don't press any key while the Script Runs !!\033[0m"
+
+
 dir=$(pwd)
 
 npm create vite@latest ${1} -- --template react
@@ -46,7 +53,7 @@ rm temp App.jsx
 mv temptwo App.jsx
 
 mkdir components
-cd components 
+cd components
 
 echo "import React from 'react'
 import { API_END_POINTS, data, headers } from '../config/Config'
@@ -168,7 +175,7 @@ cd ..
 
 
 mkdir hooks
-cd hooks 
+cd hooks
 
 echo "import axios from 'axios';
 import { useEffect, useState } from 'react';
