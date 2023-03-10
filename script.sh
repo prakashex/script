@@ -62,7 +62,15 @@ function Protected() {
    const {subData } = useCheckSub(API_END_POINTS.checkSub, {'msisdn': '701701701' }, headers)
 
 
+  /* example on how add protected routes ..
 
+ if (subData?.subStatus === 'ACTIVE') {
+      return <Component />;
+    } else {
+      return <div>Login Page</div>;
+    }
+
+*/
 
   return (
     <div>Protected</div>
