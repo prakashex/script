@@ -4,8 +4,9 @@
 
 echo -en '\n'
 echo -en '\n'
-echo  -e "\033[33;5mScript is Running Please wait , Please don't press any key while the Script Runs !!\033[0m"
-
+echo  -e "\033[33;7mScript is Running , Please don't press any key while the Script Runs !!\033[0m"
+echo -en '\n'
+echo  -e "\033[33;7mOnce it completes , It will automatically open vsCode inside your Project Folder !!\033[0m"
 
 dir=$(pwd)
 
