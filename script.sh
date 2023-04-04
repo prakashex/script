@@ -324,10 +324,10 @@ cd ..
 ## configure tailwind.config.cjs
 
 
-sed '3d' tailwind.config.cjs | tee > tctemp
-rm tailwind.config.cjs
+sed '3d' tailwind.config.js | tee > tctemp
+rm tailwind.config.js
 sed -i '3i content: [ "./index.html",  "./src/**/*.{js,ts,jsx,tsx}",],' tctemp
-mv tctemp tailwind.config.cjs
+mv tctemp tailwind.config.js
 
 
 tempDir=$(pwd)
